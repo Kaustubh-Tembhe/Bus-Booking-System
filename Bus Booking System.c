@@ -10,7 +10,7 @@ typedef struct
     int num_seat;
 }pd;
 
-void reservation();
+void Booking();
 void viewbus(void);
 void printticket(char name[],int,int,float);
 void findbus(int);
@@ -18,44 +18,39 @@ float charge(int,int);
 
 int main()
 {
-    system("color 0A");
-    printf("\t\t________________________________________________\n");
-    printf("\t\t|                                              |\n");
-    printf("\t\t|           Bus  Booking  System               |\n");
-    printf("\t\t|                                              |\n");
-    printf("\t\t________________________________________________\n");
 
-    printf(" \n Press any key to continue:");
-	int choice,n;
+    int choice,n;
 	start:
+    system("cls");
+    system("color 7D");
+    printf("\n\t\t\t\t=================================\n");
+	printf(" \t\t\t\t    BUS BOOKING SYSTEM");
+	printf("\n\t\t\t\t=================================");
+	printf("\n\t\t\t\t1) Booking");
+	printf("\n\t\t\t\t------------------------");
+	printf("\n\t\t\t\t2) View Buses");
+	printf("\n\t\t\t\t------------------------");
+	printf("\n\t\t\t\t3) Search Bus by Number");
+	printf("\n\t\t\t\t------------------------");
+	printf("\n\t\t\t\t4) Exit");
 
-    printf("\n=================================\n");
-	printf("     BUS BOOKING SYSTEM");
-	printf("\n=================================");
-	printf("\n1>> booking");
-	printf("\n------------------------");
-	printf("\n2>> View Buses");
-	printf("\n------------------------");
-	printf("\n3>> Search Bus by Number");
-	printf("\n------------------------");
-	printf("\n4>> Exit");
-
-	printf("\n-->");
+	printf("\n\t\t\t\t:)");
 	scanf("%d",&choice);
     switch(choice)
 	{
 		case 1:
-			reservation();
+			Booking();
 			break;
 		case 2:
 			viewbus();
-			printf("\n\nPress any key to go to Main Menu..");
+			printf("\n\nPress any key to go on Main Menu..");
 			getch();
 			break;
 		case 3:
             printf("Enter a number of bus :\t");
             scanf("%d",&n);
             findbus(n);
+            break;
         case 4:
 			return(0);
 		default:
@@ -68,6 +63,7 @@ int main()
 void viewbus(void)
 {
 	system("cls");
+	system("color 04");
 	printf("---------------------------------------------------------------------------------------");
 	printf("\nBus.No\tName\t\t\tDestinations  \t\tCharges  \t\tTime\n");
 	printf("---------------------------------------------------------------------------------------");
@@ -84,24 +80,30 @@ void viewbus(void)
 
 }
 
-void reservation(void)
+void Booking(void)
 {
+    system("cls");
+    system("color 98");
 	char confirm;
 	int i=0;
 	float price;
 	pd passdetails;
 	FILE *fp;
-	fp=fopen("seats_reserved.txt","a");
+	fp=fopen("seats_Booking.txt","a");
+	printf("\t\t-------------------\n");
+	printf("\t\tTICKET BOOKING\n");
+	printf("\t\t-------------------\n\n");
 
-    printf("\nEnter Your Name:> ");
+
+    printf("\n\t\tEnter Your Name-> ");
 	fflush(stdin);
 	gets(passdetails.name);
 
-	printf("\nEnter Number of Passengers:> ");
+	printf("\n\t\tEnter Number of Passengers-> ");
 	scanf("%d",&passdetails.num_seat);
 
 	viewbus();
-	printf("\n\nEnter bus number:> ");
+	printf("\n\n\t\tEnter bus number-> ");
 	start1:
 	scanf("%d",&passdetails.busno);
 	if(passdetails.busno>=1001 && passdetails.busno<=1010)
@@ -115,25 +117,27 @@ void reservation(void)
 		goto start1;
 	}
 
-	printf("\n\nConfirm Ticket (y/n):>");
+	printf("\n\n\t\tConfirm Ticket (y/n):>");
 	start:
 	scanf(" %c",&confirm);
 	if(confirm == 'y')
 	{
+	        system("color 98");
+
 		fprintf(fp,"%s\t\t%d\t\t%d\t\t%.2f\n",&passdetails.name,passdetails.num_seat,passdetails.busno,price);
-		printf("==================");
-		printf("\n Booking Done\n");
-		printf("==================");
+		printf("\t\t==================");
+		printf("\n \t\tBooking Done\n");
+		printf("\t\t==================");
 		printf("\nPress any key to go back to Main menu");
 	}
 	else
 	{
 		if(confirm=='n'){
-			printf("\nBooking Not Done!\n");
+			printf("\n\t\tBooking Not Done!\n");
 		}
 		else
 		{
-			printf("\nInvalid choice entered! Enter again-----> ");
+			printf("\n\t\tInvalid choice entered! Enter again-----> ");
 			goto start;
 		}
 	}
@@ -190,6 +194,7 @@ float charge(int busno,int num_seat)
 void printticket(char name[],int num_seat,int busno,float price)
 {
 	system("cls");
+    system("color 0A");
 	printf("-------------------\n");
 	printf("\tTICKET\n");
 	printf("-------------------\n\n");
