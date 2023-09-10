@@ -10,7 +10,6 @@ This is a simple bus booking system project developed as part of my 3rd-semester
   - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -51,6 +50,3 @@ To use the Bus Booking System, follow these steps:
 
 If you'd like to contribute to this project, feel free to fork the repository, make your changes, and create a pull request. Contributions are always welcome!
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
