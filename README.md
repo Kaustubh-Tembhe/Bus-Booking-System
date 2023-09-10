@@ -33,3 +33,24 @@ Before running this project, you should have the following prerequisites install
 
    ```bash
    git clone https://github.com/your-username/bus-booking-system.git
+## Usage
+
+To use the Bus Booking System, follow these steps:
+
+1. Run the program following the instructions mentioned in the Installation section.
+
+2. Select the desired option from the main menu:
+   - **Booking**
+   - **View Buses**
+   - **Search Bus by Number**
+   - **Exit**
+
+3. Follow the on-screen instructions to book a bus ticket, view available buses, or search for a bus by number.
+
+## Contributing
+
+If you'd like to contribute to this project, feel free to fork the repository, make your changes, and create a pull request. Contributions are always welcome!
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
