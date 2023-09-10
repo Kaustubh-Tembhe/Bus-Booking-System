@@ -31,7 +31,7 @@ Before running this project, you should have the following prerequisites install
 1. Clone the repository to your local machine using the following command:
 
    ```bash
-   git clone https://github.com/your-username/bus-booking-system.git
+   git clone https://github.com/Kaustubh-Tembhe/bus-booking-system.git
 ## Usage
 
 To use the Bus Booking System, follow these steps:
